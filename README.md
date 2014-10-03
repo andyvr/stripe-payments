@@ -3,7 +3,7 @@ stripe-payments
 
 Simple and lightweight implementation of Stripe.com payment service into Opencart shopping cart.
 
-*Getting Started*
+<h3>Getting Started</h3>
 
 Install the extension with Composer:
 
