@@ -2,6 +2,7 @@
   "name": "andyvr/stripe-payments",
   "description": "Stripe payment gateway extension for Opencart v1.5.x",
   "type": "opencart-extension",
+  "license": "MIT",
   "require": {
     "php": ">=5.2.0",
     "composer/installers": "~1.0",
