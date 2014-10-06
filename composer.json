@@ -7,4 +7,9 @@
     "composer/installers": "~1.0",
     "stripe/stripe-php": "1.*"
   }
+  "extra": {
+    "installer-paths": {
+        "/": ["type:opencart-extension"]
+    }
+  }
 }
