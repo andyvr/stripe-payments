@@ -6,13 +6,5 @@
   "require": {
     "php": ">=5.2.0",
     "stripe/stripe-php": "1.*"
-  },
-  "scripts": {
-      "post-package-install": [
-          "./build/extension-install.sh"
-      ],
-      "post-package-update": [
-          "./build/extension-install.sh"
-      ]
   }
 }
