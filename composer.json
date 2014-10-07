@@ -9,10 +9,10 @@
   },
   "scripts": {
       "post-package-install": [
-          "Andyvr\\StripePayments::postPackageInstall"
+          "./build/extension-install.sh"
       ],
       "post-package-update": [
-          "Andyvr\\StripePayments::postPackageUpdate"
+          "./build/extension-install.sh"
       ]
   }
 }
