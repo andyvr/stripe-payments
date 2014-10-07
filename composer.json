@@ -5,12 +5,14 @@
   "license": "MIT",
   "require": {
     "php": ">=5.2.0",
-    "composer/installers": "~1.0",
     "stripe/stripe-php": "1.*"
   },
-  "extra": {
-    "installer-paths": {
-        "/": ["type:opencart-extension"]
-    }
+  "scripts": {
+      "post-package-install": [
+          "Andyvr\\StripePayments::postPackageInstall"
+      ],
+      "post-package-update": [
+          "Andyvr\\StripePayments::postPackageUpdate"
+      ]
   }
 }
