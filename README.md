@@ -7,7 +7,7 @@ Stripe Payments is the simple and lightweight implementation of Stripe.com payme
 
 <h5>Installation</h5>
 
-Most convenient way is to install the extension with Composer:
+Most convenient way is to install the extension with Composer, add following to your _composer.json_ file:
 
 ```
 {
