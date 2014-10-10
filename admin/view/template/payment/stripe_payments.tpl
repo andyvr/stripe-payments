@@ -18,18 +18,19 @@
       <table class="form">
         <tr>
           <td><span class="required">*</span> <?php echo $entry_public; ?></td>
-          <td><input type="text" name="stripe_payments_public_key" value="<?php echo $stripe_payments_public_key; ?>" />
+          <td><input size="40" type="text" name="stripe_payments_public_key" value="<?php echo $stripe_payments_public_key; ?>" />
             <?php if ($error_public) { ?>
             <span class="error"><?php echo $error_public; ?></span>
             <?php } ?></td>
         </tr>
         <tr>
           <td><span class="required">*</span> <?php echo $entry_key; ?></td>
-          <td><input type="text" name="stripe_payments_private_key" value="<?php echo $stripe_payments_private_key; ?>" />
+          <td><input size="40" type="text" name="stripe_payments_private_key" value="<?php echo $stripe_payments_private_key; ?>" />
             <?php if ($error_key) { ?>
             <span class="error"><?php echo $error_key; ?></span>
             <?php } ?></td>
         </tr>
+        <input type="hidden" name="stripe_payments_mode" value="live" />
         <!--<tr>
           <td><?php echo $entry_mode; ?></td>
           <td><select name="stripe_payments_mode">
