@@ -90,9 +90,23 @@ class ControllerPaymentStripePayments extends Controller {
 			$this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('stripe_payments_order_status_id'));
 
 			$json['success'] = $this->url->link('checkout/success', '', 'SSL');
+			
+			$message = "Transaction ID: ". $charge->id;
+			$message .= ", Outcome: ". $charge->outcome->network_status;
+			
+			if ($charge->outcome->reason != null && $charge->outcome->reason != "") {
+				$message .= ", Reason: ". $charge->outcome->reason;
+			}
+			
+			$message .= ", Seller message: ". $charge->outcome->seller_message;
+			$message .= ", Type: ". $charge->outcome->type;
+			$message .= ($charge->paid == 1)? ", Paid: YES" : "Paid: NO";
+			$this->model_checkout_order->update($this->session->data['order_id'], $this->config->get('stripe_payments_order_status_id'), $message, false);	
 		} else {
 			$json['error'] = (string)$error['message'];
             $json['details'] = $error;
+			
+			$this->model_checkout_order->update($this->session->data['order_id'], 10, (string)$error['message'], false);	
 		}
 
 		$this->response->setOutput(json_encode($json));
